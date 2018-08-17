@@ -1,12 +1,12 @@
-angular.module("rev").config(['$locationProvider', '$routeProvider', function($routeProvider, $locationProvider) {
-
-    $locationProvider.hashPrefix('!');
+angular.module("rev").config(function($routeProvider) {
 
     $routeProvider
     .when("/", {
-        templateUrl : "login.html"
+        templateUrl : "./view/login/login.html",
+        controller : "login-controller"
         })
     .when("/main", {
-        templateUrl : "view/index.html"
+        templateUrl : "./view/index.html"
         })
-    }])
+    .otherwise({ redirectTo : "./view/login/login.html"});
+    });
