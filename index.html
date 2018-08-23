@@ -7,6 +7,7 @@
 
 	<!-- Google Icon Font -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
 
 	<!-- Otimizado para mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,7 +17,10 @@
 </head>
 <body>
 	<!-- Views -->
-	<ng-view></ng-view>
+	 <div ng-include="'./template/menu.html'"></div>
+	 <div ng-include="'./template/loader.html'"></div>
+	 
+	<ng-view ng-if="!loader"></ng-view>
 
 
 	<!-- jQuery -->
@@ -34,8 +38,15 @@
 	<!-- Controllers -->
 	<script src="controller/publicacao-controller.js"></script>
 	<script src="controller/login-controller.js"></script>
+	<script src="controller/main-controller.js"></script>
 	<!-- Services -->
 	<script src="service/publicacao-service.js"></script>
 	<script src="service/login-service.js"></script>
+
+	<!-- Utilidades -->
+	<script src="service/menu-service.js"></script>
+	<script src="service/loader-service.js"></script>
+	
+	<!-- <script src="service/main-service.js"></script> -->
 </body>
 </html>

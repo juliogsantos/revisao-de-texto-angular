@@ -6,7 +6,8 @@ angular.module("rev").config(function($routeProvider) {
         controller : "login-controller"
         })
     .when("/main", {
-        templateUrl : "./view/index.html"
+        templateUrl : "./view/index.html",
+        controller : "main-controller"
         })
     .otherwise({ redirectTo : "./view/login/login.html"});
     });
