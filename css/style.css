@@ -270,9 +270,20 @@ p, h1, h2, h3, h4, h5, span, section, aside, header, footer, div{
 }
 
 .wrapper{
-	width: 600px;
-	height: 600px;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
 	
+	
+}
+
+.login{
+	width: 55vw;
+	height: 55vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 

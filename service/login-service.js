@@ -6,5 +6,5 @@ angular.module("rev").service('loginService', function($http){
         }
         console.log("n logou");
         return false;
-    };
-});
+    }
+});    
