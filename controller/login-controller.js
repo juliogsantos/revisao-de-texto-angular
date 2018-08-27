@@ -1,4 +1,4 @@
-angular.module("rev").controller("login-controller", function ($scope, loginService, menuService, loaderService, $interval) {
+angular.module("rev").controller("login-controller", function ($scope, loginService, menuService, loaderService) {
 
     $scope.user = {
         login : "",
@@ -6,12 +6,13 @@ angular.module("rev").controller("login-controller", function ($scope, loginServ
         perfil : ""
     };
 
-    $scope.login = function(user){
-        loaderService.mostrarLoader(true);
-        loginService.validarLogin(user);
-        loaderService.mostrarLoader(false);
-    };
+    $scope.login = function(u){
+        console.log("login");
+        loginService.validarLogin(u);
 
-    menuService.mostrarMenu(false);
-    
+        
+    };
+  
+   loaderService.mostrarLoaderSv(false)
+   menuService.mostrarMenuSv(false); 
 });

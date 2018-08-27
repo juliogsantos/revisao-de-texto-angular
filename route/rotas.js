@@ -10,4 +10,18 @@ angular.module("rev").config(function($routeProvider) {
         controller : "main-controller"
         })
     .otherwise({ redirectTo : "./view/login/login.html"});
+    })
+    .run(function ($rootScope) {
+        $rootScope.menu = false;
+        $rootScope.loader = false;
+
+        $rootScope.loaderRoot = function(valor){
+            console.log("no .run setando o valor de Loader");  
+            $rootScope.loader = valor;
+        };
+
+        $rootScope.menuRoot = function(valor){
+            console.log("no .run setando o valor de menu");
+            $rootScope.menu = valor;
+        };
     });

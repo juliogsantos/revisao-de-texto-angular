@@ -1,5 +1,6 @@
-angular.module("rev").service('menuService', function($rootScope){
-    this.mostrarMenu = function(valor){
-        $rootScope.menu = valor;
+angular.module("rev").service('menuService', ['$rootScope', function($rootScope){
+   this.mostrarMenuSv = function(valor){
+    console.log("chamando o menu no rootScope");
+        $rootScope.menuRoot(valor);
     };
-});
+}]);
