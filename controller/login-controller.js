@@ -9,10 +9,8 @@ angular.module("rev").controller("login-controller", function ($scope, loginServ
     $scope.login = function(u){
         console.log("login");
         loginService.validarLogin(u);
-
-        
     };
   
-   loaderService.mostrarLoaderSv(false)
+   loaderService.mostrarLoaderSv(false);
    menuService.mostrarMenuSv(false); 
 });

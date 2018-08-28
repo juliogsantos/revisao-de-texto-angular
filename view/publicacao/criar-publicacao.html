@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="row login">
+        <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="titulo" type="text" ng-model="publicacao.titulo" class="validate">
+                <label for="titulo">Título</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" ng-model="publicacao.texto" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Texto</label>
+                </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                  <button class="btn waves-effect waves-light right" ng-click="criarPublicacao(publicacao)" type="button">
+                      <i class="material-icons right">send</i>
+                  </button>
+              </div>
+            </div>
+        </form>
+      </div>
+</div>

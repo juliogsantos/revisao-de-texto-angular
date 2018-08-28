@@ -9,6 +9,10 @@ angular.module("rev").config(function($routeProvider) {
         templateUrl : "./view/index.html",
         controller : "main-controller"
         })
+    .when("/criar-publicacao", {
+        templateUrl : "./view/publicacao/criar-publicacao.html",
+        controller : "publicacao-controller"
+        })
     .otherwise({ redirectTo : "./view/login/login.html"});
     })
     .run(function ($rootScope) {
