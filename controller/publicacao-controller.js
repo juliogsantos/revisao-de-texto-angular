@@ -16,8 +16,16 @@ angular.module("rev").controller("publicacao-controller", function ($scope, publ
     }
 
     $scope.criarPublicacao = function(publicacao){
-    console.log(publicacao.dataCriacao.getDate()+"/"+$scope.resolveMes(publicacao.dataCriacao.getMonth())+"/"+publicacao.dataCriacao.getFullYear());
     
+    $scope.publicacao.titulo = publicacao.titulo;
+    $scope.publicacao.texto = publicacao.texto;
+    $scope.publicacao.dataCriacao = publicacao.dataCriacao.getDate()+"/"+$scope.resolveMes(publicacao.dataCriacao.getMonth())+"/"+publicacao.dataCriacao.getFullYear();
+    $scope.publicacao.dataCorrecao = publicacao.dataCorrecao;
+    $scope.publicacao.dataAutorizacao = publicacao.dataAutorizacao;
+    $scope.publicacao.dataPublicacao = publicacao.dataPublicacao;
+    $scope.publicacao.observacao = publicacao.observacao;
+
+    console.log($scope.publicacao.dataCriacao);
     };
 
     menuService.mostrarMenuSv(true);
