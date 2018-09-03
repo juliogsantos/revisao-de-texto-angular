@@ -10,7 +10,10 @@ $u->setName("fodase");
 $u->setLogin("qwerty");
 $u->setPass("12345");
 
-$c = new UsuarioController($u);
+$c = new UsuarioController();
 
-$c->addUsuario($con);
+$c->setUsuario($u);
 
+$sql = "INSERT INTO usuarios VALUES(". $c->getUsuario()->getId() .", '". $c->getUsuario()->getName() ."', '". $c->getUsuario()->getLogin() ."', '". $c->getUsuario()->getPass() ."')";
+
+$c->executar('insert', $sql);

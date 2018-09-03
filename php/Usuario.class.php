@@ -6,26 +6,25 @@ class Usuario {
     public $login;
     public $pass;
 
-    public function getId (){
+    public function getId(){
         return $this->id;
     }
-    public function setId ($valor){
+    public function setId($valor){
         $this->id = $valor;
     }
-
-    public function getName (){
+    public function getName(){
         return $this->name;
     }
     public function setName($valor){
         $this->name = $valor; 
     }
-     public function getLogin (){
+     public function getLogin(){
         return $this->login;
     }
     public function setLogin($valor){
         $this->login = $valor; 
     }
-    public function getPass (){
+    public function getPass(){
         return $this->pass;
     }
     public function setPass($valor){

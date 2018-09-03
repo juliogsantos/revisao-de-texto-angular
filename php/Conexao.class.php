@@ -1,29 +1,29 @@
 <?php
 
-	class Conexao{
-		$host = "localhost";
-		$usuario = "root";
-		$senha = "";
-		$banco = "revisao";
-		$con = null;
+	abstract class Conexao{
+		public $host = "localhost";
+		public $u = "root";
+		public $senha = "";
+		public $banco = "revisao";
+		public $con = null;
 
-		function abreConexao(){
-			$con = mysqli_connect($host,$usuario,$senha,$banco);
+		public function abreConexao(){
+			$this->con = mysqli_connect($this->host, $this->u, $this->senha, $this->banco);
 			echo "conexao aberta";
 		}
 
-		function fechaConexao(){
-			mysqli_close($con);
+		public function fechaConexao(){
+			mysqli_close($this->con);
 			echo "conexao fechada";
 		}
 
-		function executar($comando, $sql){
+		public function executar($comando, $sql){
 			switch ($comando) {
 
 				case 'insert':
-					abreConexao();
-					mysqli_query($con, $sql);
-					fechaConexao();
+					self::abreConexao();
+					mysqli_query($this->con, $sql);
+					self::fechaConexao();
 					break;
 
 				case 'update':
@@ -44,7 +44,6 @@
 					fechaConexao();
 					return mysqli_fetch_assoc($result);
 					break;
-
 
 				case 'findId':
 					abreConexao();

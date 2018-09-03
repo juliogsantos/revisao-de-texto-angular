@@ -1,24 +1,20 @@
 <?php 
-
+require_once "Conexao.class.php";
 require_once "Usuario.class.php";
 
-class UsuarioController {
+class UsuarioController extends Conexao {
 
     public $usuario;
 
-     function __construct (Usuario $u){
-         $this->usuario = $u;
+     function __construct (){
+         
      }
 
      function getUsuario(){
          return $this->usuario;
      }
 
-     function setUsuario($valor){
+     function setUsuario(Usuario $valor){
          $this->usuario = $valor;
-     }
-
-     function addUsuario($con){
-         $sql = "INSERT INTO usuarios VALUES(". $this->usuario->getId() .", '". $this->usuario->getName() ."', '". $this->usuario->getLogin() ."', '". $this->usuario->getPass() ."')";
      }
 }
